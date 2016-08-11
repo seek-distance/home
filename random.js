@@ -25,7 +25,7 @@
                         $(this).remove();
                     });
                 });
-            }, 50);
+            }, 10);
             run = 1;
         } else {
            heading.html(heading.html().replace("今日食乜野?_?", "→_→就食D个啦←_←"));
