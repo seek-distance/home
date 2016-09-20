@@ -1,14 +1,16 @@
-    $(function () {
+$(function() {
     var run = 0,
         heading = $("h1"),
         timer;
+    console.log(2)
 
-    $("#start").click(function () {
+    $("#start").click(function() {
+        console.log(1)
         var list = $("#list").val().replace(/ +/g, " ").replace(/^ | $/g, "").split(" ");
         if (!run) {
             heading.html(heading.html().replace("→_→就食D个啦←_←", "今日食乜野?_?"));
             $(this).val("停止");
-            timer = setInterval(function () {
+            timer = setInterval(function() {
                 var r = Math.ceil(Math.random() * list.length),
                     food = list[r - 1];
                 $("#what").html(food);
@@ -18,17 +20,17 @@
                 $("<span class='temp'></span>").html(food).hide().css({
                     "top": rTop,
                     "left": rLeft,
-                    "color": "rgba(" + Math.floor(Math.random()*255) + "," + Math.floor(Math.random()*255) + "," + Math.floor(Math.random()*255) + "," + Math.random() + ")",
+                    "color": "rgba(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.random() + ")",
                     "fontSize": rSize + "px"
-                }).appendTo("body").fadeIn("slow", function () {
-                    $(this).fadeOut("slow", function () {
+                }).appendTo("body").fadeIn("slow", function() {
+                    $(this).fadeOut("slow", function() {
                         $(this).remove();
                     });
                 });
             }, 10);
             run = 1;
         } else {
-           heading.html(heading.html().replace("今日食乜野?_?", "→_→就食D个啦←_←"));
+            heading.html(heading.html().replace("今日食乜野?_?", "→_→就食D个啦←_←"));
             $(this).val("不行，好想换一个");
             clearInterval(timer);
             run = 0;
