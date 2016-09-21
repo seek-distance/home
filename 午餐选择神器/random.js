@@ -2,10 +2,8 @@ $(function() {
     var run = 0,
         heading = $("h1"),
         timer;
-    console.log(2)
 
     $("#start").click(function() {
-        console.log(1)
         var list = $("#list").val().replace(/ +/g, " ").replace(/^ | $/g, "").split(" ");
         if (!run) {
             heading.html(heading.html().replace("→_→就食D个啦←_←", "今日食乜野?_?"));
