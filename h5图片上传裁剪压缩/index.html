@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="tephone=no,email=no,date=no,address=no">
+    <title></title>
+    <link rel='stylesheet' href='css/mui.min.css'>
+    <style>
+    
+        html,
+        body{height:100%;  margin:0;  }
+
+        #clipArea{position:absolute;  top:0;  bottom:0;  left:0;  right:0;  background:rgba(0,0,0,0.5);  } 
+
+        #clipArea a{position:absolute;  bottom:0;  right:0;  z-index:10;   width:100px;  background:#fff;  text-align:center;  font:16px/50px '';  color:#666;  }
+        #clipArea a[clear]{left:0;  }
+        #clipArea a[ok]{}
+
+        /* #img{max-width:100%;  max-height:200px;  } */
+    </style>
+</head>
+
+<body>
+
+    <h5>裁剪压缩</h5>    
+    <input id="file" type="file" accept="image/*">
+
+    <br>
+    <br>
+
+    <h5>只压缩</h5>    
+    <input id="file2" :change='file2' type="file" accept="image/*">
+
+    <br>
+    <br>
+
+    <img src='' id='img'>
+
+
+    <div id="clipArea" style='display:none;'>
+        <a :click='hide_clipArea' clear>取消</a>
+        <a :click='hide_clipArea' ok>确定</a>
+    </div>
+
+<script src='js/mui.min.js'></script>
+<script src="js/s.js"></script>
+<!-- 图片压缩 -->
+<script src="js/lrz.all.bundle.js"></script>
+<!-- 图片裁剪 -->
+<!-- jq和其他插件一并集成，去除$符号 -->
+<script src='js/img_clip.js'></script>
+<script>
+
+    $.bindEvent('change')
+
+    eve.hide_clipArea=function (){
+        $('#clipArea').hide()
+    }
+
+    eve.show_clipArea=function (){
+        $('#clipArea').show()
+    }
+
+    eve.file2=function (){
+
+        alert2('照片压缩中...')
+
+        console.log(this.files)
+        img_min(this.files[0],function (rst){
+
+            mui.closePopup()
+
+            var img=document.querySelector('#img')
+            img.src=rst.base64
+
+            img.onload=function (){
+                mui.alert(
+                    (rst.origin.size/1024).toFixed(2)+'kb to '+(rst.base64.length/1024).toFixed(2)+'kb'
+                )
+            }
+        })
+    }
+
+    // 剪切压缩
+    jQuery("#clipArea").photoClip({
+    	width: 200,
+    	height: 200,
+    	file: '#file',
+    	ok: "#clipArea [ok]",
+    	loadStart: function() {
+    		//console.log("照片读取中...")
+            alert2('照片读取中...')
+
+            eve.show_clipArea()
+    	},
+    	loadComplete: function() {
+    		//console.log("照片读取完成")
+            mui.closePopup()
+    	},
+    	clipFinish: function(data) {
+            //console.log("照片裁剪完成")
+
+            eve.hide_clipArea()
+
+            alert2('照片压缩中...')
+
+            img_min(data,function(rst){
+
+                mui.closePopup()
+
+                var img=document.querySelector('#img')
+                img.src=rst.base64
+                img.onload=function (){
+                    mui.alert(
+                        '裁剪后的图片 '+img.height + 'x' + img.width+
+                        '\n'+
+                        (data.length/1024).toFixed(2)+'kb to '+(rst.base64.length/1024).toFixed(2)+'kb'
+                    )
+                }
+            })
+    	}
+    })
+
+
+function img_min(data,fn){
+    // 可以传file，图片路径或者base64
+    lrz(data,{
+        // 压缩后最大宽高为1280
+        width : 1280,
+        height : 1280,
+        // 压缩质量
+        quality : 0.7,
+    })
+    .then(fn)
+    .catch(function (err) {
+        // 失败执行
+    })
+    .always(function () {
+        // 不管是成功失败，都会执行
+    })
+}
+
+</script>
+</body>
+</html>
+
