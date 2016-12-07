@@ -1,7 +1,6 @@
 html {
     overflow: hidden;
     height: 100%;
-    
 }
 
 body {
@@ -11,11 +10,10 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
-    background:#EEE ;
+    background: #EEE;
     font-family: "微软雅黑";
     background-size: cover;
 }
-
 
 #wrapper {
     position: absolute;
@@ -29,16 +27,15 @@ body {
 }
 
 #wrapper h1 {
-    padding:10px 10px 40px;
+    padding: 10px 10px 40px;
     margin: 0;
     font-weight: 300;
     font-size: 30px;
-     color: #000000;
+    color: #000000;
     background: #eee;
 }
 
-#wrapper h1 b{
-   
+#wrapper h1 b {
     font-weight: 700;
 }
 
@@ -49,15 +46,15 @@ body {
     vertical-align: middle;
     font-family: "微软雅黑";
     cursor: pointer;
-    border-radius:5px;
-    border:0;
+    border-radius: 5px;
+    border: 0;
     color: #fff;
     background: #f60;
 }
-#start:hover{
+
+#start:hover {
     background: #f58338;
 }
-
 
 #cfg {
     color: #666;
@@ -65,6 +62,7 @@ body {
     font-size: 12px;
     cursor: pointer;
 }
+
 .temp {
     position: absolute;
     z-index: -1;
@@ -98,4 +96,3 @@ body {
     width: 50px;
     height: 22px;
 }
-
