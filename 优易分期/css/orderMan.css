@@ -1,0 +1,118 @@
+section{
+    padding:0 0.2rem 1.5rem;
+    min-height: 500px;
+}
+.head ul,.order-list>li:nth-child(odd){
+    background: #f8f6f6;
+    border-bottom: 1px solid #e6e6e6;
+}
+.head li{
+    height: 0.96rem;
+    width: 33.33%;
+    float: left;
+    text-align: center;
+}
+.head li span{
+    display: inline-block;
+    height: 0.93rem;
+    margin: 0 auto;
+    line-height: 0.96rem;
+    font-size: 0.30rem;
+}
+.head li i{
+    font-style: normal;
+}
+.head li.active span{
+    border-bottom: 3px solid #fca41a;
+    color: #fca41a;
+}
+.content .search{
+    position: relative;
+}
+.content-item{
+    display: none;
+    opacity: 0;
+}
+.content-item.in{
+    display: block;
+    opacity: 1;
+    animation: fadeOut 0.5s;
+    -webkit-animation: fadeOut 0.5s;
+}
+.content-item.out{
+    display: none;
+    opacity: 0;
+    animation: fadeOut 0.5s;
+    -webkit-animation: fadeOut 0.5s;
+}
+.content .search input{
+    width: 100%;
+    height: 1.26rem;
+    padding:0 1.35rem 0 0.78rem;
+    border: none;
+    font-size: 0.3rem;
+    outline: none;
+}
+.content .search i{
+    position: absolute;
+    right: 0.80rem;
+    top: 0.45rem;
+    font-size: 0.35rem;
+    color: #c4c4c4;
+}
+.order-list>li:nth-child(odd){
+    border-top: 1px solid #e6e6e6;
+}
+.order-list>li{
+    padding: 0.13rem 0.43rem;
+    height: 3.33rem;
+}
+.order-list .head-left{
+    width: 23%;
+}
+.order-list .head-right{
+    width: 77%;
+    height: 1.93rem;
+}
+.order-list .head-left img{
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    border: 5px solid #ffd798;
+    margin-top: 0.40rem;
+}
+.head-right dl{
+    height: 0.65rem;
+    line-height: 0.65rem;
+    font-size: 0.27rem;
+}
+.head-right dl .special{
+    margin-left: 0.83rem;
+}
+.list-foot li{
+    float: left;
+    width: 1.73rem;
+    margin-right: 0.5rem;
+    height: 0.65rem;
+}
+.list-foot li:last-child{
+    margin-right: 0;
+}
+.list-foot{
+    margin-top: 0.30rem;
+}
+.list-foot li a{
+    display: block;
+    line-height: 0.65rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.25rem;
+    border-radius: 7px; 
+    background: #6bd9fe;
+}
+.list-foot li:nth-child(2) a{
+    background: #ffb436;
+}
+.list-foot li:nth-child(3) a{
+    background: #fb9671;
+}

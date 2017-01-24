@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>选择月低消4</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fourth.css">
+    <script src='js/zepto.min.js'></script>
+</head>
+<body>
+    <header class="equal-header">
+        <a href="" class="return fl" onclick="javascript: window.history.go(-1);return false;">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </a>
+        选择月低消
+    </header>
+    <section> 
+        <div class="head">
+            <img src="image/fourthHead.png" alt="协议上传">
+        </div>
+        <div class="content">
+            <div class="content-item clearfix">
+                <div class="item-left fl">
+                    <img src="image/idLogo.png">
+                    <input type="file" hidden>
+                </div>
+                <div class="item-right fl">
+                    <p class="top">手持身份证照片（参考有图）</p>
+                    <p>1.照片应同时包含身份证正面像以及 本人胸部以上头像</p>
+                    <p>2.身份证正面照片完整，字迹清晰</p>
+                    <p>3.本人图像五官清晰，且无遮挡</p>
+                </div>    
+            </div>
+            <div class="content-item second clearfix">
+                <a class="item clearfix" href="">
+                    <div class="item-left fl">
+                        <img src="image/idPic.png" alt="身份证">
+                        <input type="file" hidden>
+                    </div>
+                    <div class="item-right fl">
+                        <p class="top">身份证照片</p>
+                        <p>身份证卡片完整，图像字迹清晰</p>
+                    </div>
+                </a>
+                <a class="item clearfix" href="">
+                    <div class="item-left fl">
+                        <img src="image/xieyi.png" alt="协议">
+                        <input type="file" hidden>
+                    </div>
+                    <div class="item-right fl">
+                        <p class="top">协议</p>
+                        <p>协议图像完整，字迹清晰</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>    
+    <footer class="equal-footer">
+        <ul class="clearfix">
+            <li class="footer-item">
+                <a href="">
+                   <img src="image/foot1.png" alt="业务管理">
+                    <p>业务管理</p> 
+                </a>                
+            </li>
+            <li class="footer-item active">
+                <a href="">
+                   <img src="image/foot2On.png" alt="工单管理">
+                    <p>工单管理</p>  
+                </a>                               
+            </li class="footer-item">
+            <li class="footer-item">
+                <a href="">
+                    <img src="image/foot3.png" alt="个人中心">
+                    <p>个人中心</p>
+                </a>                                
+            </li>
+        </ul>
+    </footer>
+
+    <script src='js/autoRem.js'></script>
+    <script>
+        $(".item-left img").tap(function(){
+            $(this).siblings('input').click();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>工单管理</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/orderAccept.css">
+    <script src='js/zepto.min.js'></script>
+</head>
+<body>
+    <header class="equal-header">业务受理</header>
+    <section>
+        <dd>
+            <dl>
+                身份信息
+                <input id="camera" hidden type="file" accept="image/*" capture="camera">
+                <i class="fa fa-camera" aria-hidden="true"></i>
+            </dl>
+            <dl>
+                <input type="text" placeholder="姓名" required>
+            </dl>
+            <dl>
+                <input id="id" type="text" placeholder="身份证" required>
+                <span class="fr error">请输入正确的身份证</span>
+            </dl>
+            <dl>
+                <input id="tel" type="text" placeholder="客户手机号" required>
+                <button id="send" class="send">发送</button>
+            </dl>
+            <dl>
+                <input type="text" placeholder="验证码" required>
+                <span class="fr error telError">请输入正确的手机号码</span>
+            </dl>
+        </dd>
+        <div class="argee">
+            <label>
+                <input id="argee" type="radio">
+                我已阅读并同意
+                <a href="argeement.html">《优易金融服务协议》</a>
+            </label>
+            
+        </div>        
+        <a class="submit unvaild" href="">提交初稿</a>
+
+    </section>    
+    <footer class="equal-footer">
+        <ul class="clearfix">
+            <li class="footer-item active">
+                <a href="">
+                   <img src="image/foot1On.png" alt="业务管理">
+                    <p>业务管理</p> 
+                </a>                
+            </li>
+            <li class="footer-item">
+                <a href="">
+                   <img src="image/foot2.png" alt="工单管理">
+                    <p>工单管理</p>  
+                </a>                               
+            </li class="footer-item">
+            <li class="footer-item">
+                <a href="">
+                    <img src="image/foot3.png" alt="个人中心">
+                    <p>个人中心</p>
+                </a>                                
+            </li>
+        </ul>
+    </footer>
+
+    <script src='js/autoRem.js'></script>
+    <script>
+        $(".fa-camera").tap(function(){
+            $("#camera").click();
+        })
+        var height=$("dl i")[0].offsetHeight;
+        $("dl i").css("marginTop",-height/2);
+        var timer,hasClick=false;
+        $("#send").tap(function(){
+            if(hasClick==false){
+                var time=60;
+                hasClick=true;
+                $(this).addClass('active');
+                $(this).html("重新发送("+(--time)+")");
+                timer=setInterval(function(){                
+                    if (time!=0) {
+                        $("#send").html("重新发送("+(--time)+")");
+                    }else{
+                        clearInterval(timer);
+                        $("#send").html("发送");
+                        hasClick=false;
+                        $("#send").removeClass('active');
+                    }                
+                },1000)
+            }            
+        })
+        var vaild=false;
+        var isvaild=[false,false];
+        var idReg=/^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]|X)$/;
+        var telReg=/^1[34578]\d{9}$/;
+        $("#id").change(function(){
+            if (idReg.test($(this).val())) {
+                $(this).siblings(".error").hide();
+                isvaild[0]=true;
+            }else{
+                $(this).siblings(".error").show();
+                isvaild[0]=false;
+            }
+        })
+        $("#tel").change(function(){
+            if (telReg.test($(this).val())) {
+                $(".telError").hide();
+                isvaild[1]=true;
+            }else{
+                $(".telError").show();
+                isvaild[1]=false;
+            }
+        })
+        $("input").change(function(){
+            var num=0;
+            $("dd input").each(function(i){
+                if($(this).val()!=""){
+                    num++;
+                }
+            })
+            if($("#argee").attr("checked")){
+                num++;
+            }
+            for (var i = 0; i < isvaild.length; i++) {
+                if(isvaild[i]){
+                    num++;
+                }
+            }
+            if (num == 7) {
+                console.log("a")
+                $(".submit").removeClass("unvaild");
+                vaild=true;
+            }
+        })
+    </script>
+</body>
+</html>

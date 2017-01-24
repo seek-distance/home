@@ -1,0 +1,67 @@
+section{
+    padding:0 0.3rem 1.5rem;
+}
+dl{
+    padding: 0 0.62rem;
+    color: #686868;
+    height: 0.94rem;
+    border-bottom: 1px solid #e6e6e6;
+    line-height: 0.94rem;
+    font-size: 0.28rem;
+    position: relative;
+}
+dl .fa-camera,dl .send{
+    font-size: 0.40rem;
+    position: absolute;
+    right: 0.62rem;
+    top: 50%;
+}
+dl input{
+    color: #686868;
+    border: none;
+    outline: none;
+    font-size: 0.28rem;
+}
+dl .error{
+    color: #ff9c00;
+    font-size: 0.2rem;
+    display: none;
+}
+dl .send{
+    border: 1px solid #ff9c00;
+    color: #ff9c00;
+    background: #fff;
+    padding: 0 0.24rem;
+    height: 0.60rem;
+    line-height: 0.6rem;
+    font-size: 0.28rem;
+    margin-top: -0.3rem;
+    border-radius: 5px;
+    outline: none;
+}
+dl .send.active,a.unvaild{
+    background: #ccc;
+    border: none;
+    color: #fff;
+}
+.argee{    
+    margin-top: 0.3rem;
+    padding-left: 0.62rem;
+    font-size: 0.28rem;
+}
+.argee a{
+    color: #ff9c00;
+    font-size: 0.28rem;
+}
+.submit{
+    background: #ff9c00;
+    border-radius: 5px;
+    color: #fff;
+    padding: 0.2rem;
+    height: 0.77rem;
+    line-height: 0.77rem;
+    display: block;
+    text-align: center;
+    margin: 0.55rem auto 0;
+    font-size: 0.38rem;
+}

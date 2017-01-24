@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>选择月低消</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/nextStep.css">
+    <script src='js/zepto.min.js'></script>
+</head>
+<body>
+    <!-- 地址格式 -->
+    <!-- http://www.open-open.com/lib/view/open1454507506073.html -->
+    <header class="equal-header">
+        <a href="" class="return fl" onclick="javascript: window.history.go(-1);return false;">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </a>
+        选择月低消
+    </header>
+    <section>
+        <ul class="money clearfix">
+            <li class="money-item">
+                <p>手机原价</p>
+                <p>5234</p>
+            </li>
+            <li class="money-item center">
+                <p>优惠额度</p>
+                <p>5234</p>
+            </li>
+            <li class="money-item">
+                <p>合约价</p>
+                <p>5234</p>
+            </li>
+        </ul>
+        <dd class="content">
+            <dl>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <select>
+                    <option value="3">3个月</option>
+                    <option value="6">6个月</option>
+                    <option value="12">12个月</option>
+                    <option value="2">24个月</option>
+                </select>
+            </dl>
+            <dl>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <select>
+                    <option value="3">1860元</option>
+                    <option value="3">1860元</option>
+                    <option value="3">180元</option>
+                    <option value="3">1860元</option>
+                </select>
+            </dl>
+            <dl class="has-left address">
+                <i class="fa fa-map-marker special" aria-hidden="true"></i>
+                <div class="province">
+                    <select>
+                        <option value="3">请选择</option>
+                        <option value="3">广东</option>
+                        <option value="3">福建</option>
+                        <option value="3">北京</option>
+                        <option value="3">天津</option>
+                    </select>
+                </div>
+                <div class="city">
+                    <select>
+                        <option value="3">请选择</option>
+                        <option value="3">广州</option>
+                        <option value="3">福建</option>
+                        <option value="3">北京</option>
+                        <option value="3">天津</option>
+                    </select>
+                </div>
+                <div class="area">
+                    <select>
+                        <option value="3">请选择</option>
+                        <option value="3">广东</option>
+                        <option value="3">福建</option>
+                        <option value="3">北京</option>
+                        <option value="3">天津</option>
+                    </select>
+                </div>
+                <input type="text" placeholder="详细地址">
+            </dl>
+            <dl class="has-left">
+                <input type="text" placeholder="邮箱地址">
+                <i class="fa fa-envelope-o special" aria-hidden="true"></i>
+            </dl>
+            <dl class="has-left">
+                <input type="text" placeholder="紧急联系人">
+                <i class="fa fa-user-o special" aria-hidden="true"></i>
+            </dl>
+            <dl class="has-left">
+                <i class="fa fa-user special" aria-hidden="true"></i>
+                <select>
+                    <option value="3">选择与紧急联系人的关系</option>
+                    <option value="3">父亲</option>
+                    <option value="3">兄弟</option>
+                    <option value="3">朋友</option>
+                </select>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </dl>
+            <dl class="has-left">
+                <input type="text" placeholder="联系电话">
+                <i class="fa fa-mobile special" aria-hidden="true"></i>
+            </dl>
+        </dd>
+        <a class="next" href="">下一步</a>
+    </section>
+
+    <script src='js/autoRem.js'></script>
+    <script>
+        $(".content i").each(function(i){
+            var h=$(this)[0].offsetHeight;
+            console.log(h);
+            $(this).css("marginTop",-h/2);
+        })
+    </script>
+</body>
+</html>

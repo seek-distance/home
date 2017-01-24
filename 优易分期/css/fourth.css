@@ -1,0 +1,54 @@
+section{
+    padding-bottom: 1rem;
+}
+.head{
+    background: #ededed;
+    padding: 0.34rem 0;
+}
+.head img{
+    margin: 0 auto;
+    width: 6.47rem;
+    display: block;
+}
+.content{
+    padding: 0.37rem 0.44rem 0;
+}
+.content-item{
+    width: 100%;
+    padding: 0.47rem 0 0.27rem;
+    border: 2px solid #c9c9c9;
+    border-radius: 5px;
+    margin-bottom: 0.37rem;
+}
+.item-left{
+    width: 1.74rem;
+}
+.item-right{
+    width: 3.39rem;
+}
+.content-item img{
+    border-radius: 50%;
+    width: 1.10rem;
+    display: block;
+    margin: 0 auto;
+}
+.content-item p{
+    font-size: 0.26rem;
+    width: 4.39rem;
+    margin-bottom: 0.14rem;
+    line-height: 0.44rem;
+}
+.content-item .top{
+    font-size: 0.32rem;
+    font-weight: bold;
+}
+.content-item .item{
+    display: block;
+}
+.content-item .item:first-child{
+    margin-bottom: 0.5rem;    
+}
+.second p{    
+    margin-bottom: 0.2rem;
+}
+

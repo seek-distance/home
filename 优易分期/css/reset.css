@@ -1,0 +1,90 @@
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,hr,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;box-sizing: border-box;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ul{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:;}
+abbr,acronym{border:0;}
+body{color:#666;background-color:#fff;font:12px/1.5 "微软雅黑",tahoma,arial,'Hiagino Sans GB',宋体,sans-serif;}
+.clearfix:after{content:" ";clear:both; height:0; visibility:hidden;display:block;font-size:0;}
+clearfix{zoom:1;}
+a{text-decoration: none;color: #666666;};
+body{font-size: 14px;}
+.fl{float: left;}
+.fr{float: right;}
+.equal-header{
+    height: 0.95rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.38rem;
+    background: #fca41a;
+    line-height: 0.85rem;
+}
+.return{
+    margin-left: 0.53rem;
+    margin-top: 0.1rem;
+    color: #fff;
+}
+.return i{
+    font-size: 0.6rem;
+}
+.equal-footer{
+    border-top: 1px solid #e6e6e6;
+    position:fixed;
+    width: 100%;
+    bottom: 0;
+    background: #fff;
+}
+.equal-footer .footer-item{
+    width: 33.33%;
+    height: 1rem;
+    float: left;
+}
+.equal-footer .footer-item a{
+    padding-top: 0.05rem;
+    display: block;
+}
+.equal-footer .footer-item img{
+    display: block;
+    margin: 0 auto;
+    height: 0.57rem;
+}
+.equal-footer .footer-item p{
+    font-size: 0.25rem;
+    text-align: center;
+    color: #666666;
+}
+.footer-item.active p{
+    color: #fca41a;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 1;
+    }to{
+        opacity: 0;
+    }
+}
+@keyframes fadeOut{
+    from {
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeIn{
+    from{
+        opacity: 1;
+    }to{
+        opacity: 0;
+    }
+}
+@-webkit-keyframes fadeOut{
+    from {
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
