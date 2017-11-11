@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-for='(value,key) in imgs'>
+            <input @change='getImg(key, $event)' type="file">{{value.name}}
+            <img :src="value.src">
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    imgs: [{
+                            name: '图片一',
+                            src: ''
+                        },
+                        {
+                            name: '图片二',
+                            src: ''
+                        },
+                        {
+                            name: '图片三',
+                            src: ''
+                        }
+                    ]
+                }
+            },
+            methods: {
+                getImg(key, event) {
+                    var file = event.currentTarget.files[0];
+                    var reader = new FileReader();
+                    reader.onloadend =  ()=> {
+                        this.imgs[key].src = reader.result;
+                    }
+                    if (file) {
+                        reader.readAsDataURL(file);
+                    } else {
+                        this.imgs[key].src = "";
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
